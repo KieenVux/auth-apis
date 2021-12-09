@@ -6,7 +6,6 @@ import { ReasonPhrases, StatusCodes } from 'http-status-codes';
 import { AccountRepository } from 'src/account/account.repository';
 import { HashedPayload } from './dto/hashed.dto';
 import { LoginReq } from './dto/login.dto';
-import { Roles } from './guard/role.guard';
 @Injectable()
 export class AuthService {
   constructor(private repository: AccountRepository, private jwt: JwtService) {}
@@ -27,7 +26,7 @@ export class AuthService {
       id: account.id,
       email: account.email,
       name: account.name,
-      role: [Roles.USER],
+      role: account.role,
     };
     const token = this.jwt.sign({ payload });
 

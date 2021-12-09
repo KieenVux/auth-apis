@@ -1,6 +1,7 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { IsEmail, Length } from 'class-validator';
+import { IsEmail, IsEnum, Length } from 'class-validator';
 import { Document } from 'mongoose';
+import { Roles } from 'src/auth/guard/role.guard';
 import { BaseSchema } from 'src/base/base.schema';
 export type AccountDocument = Account & Document;
 
@@ -17,6 +18,12 @@ export class Account extends BaseSchema {
   @Prop()
   @Length(10, 30)
   password: string;
+
+  @Prop({ enum: Roles, type: Array })
+  @IsEnum(Roles, {
+    each: true,
+  })
+  role: Roles[];
 }
 
 export const AccountSchema = SchemaFactory.createForClass(Account);
