@@ -13,7 +13,7 @@ import configDatabase from './config/config.database';
       load: [configDatabase],
       isGlobal: true,
     }),
-    MongooseModule.forRoot('mongodb://root:123456@mongodb/nest'),
+    MongooseModule.forRoot('mongodb://root:123456@mongo:27017/'),
     AccountModule,
     AuthModule,
   ],
