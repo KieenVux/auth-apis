@@ -16,7 +16,7 @@ import configDatabase from './config/config.database';
       load: [configDatabase],
       isGlobal: true,
     }),
-    MongooseModule.forRoot('mongodb://localhost:27017/'),
+    MongooseModule.forRoot(process.env.ME_CONFIG_MONGODB_URL),
     AccountModule,
     AuthModule,
   ],

@@ -24,6 +24,7 @@ services:
       dockerfile: ./Dockerfile
     environment:
       NODE_ENV: production
+      ME_CONFIG_MONGODB_URL: mongodb://root:123456@mongo:27017/
     ports:
       - 8080:8080
     expose:
