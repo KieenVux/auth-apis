@@ -10,7 +10,7 @@ async function bootstrap() {
   const config = new DocumentBuilder()
     .setTitle('Auth apis with authorization')
     .setDescription(
-      'In order to call api, you must be able to use jwt and cicd workflows',
+      'In order to call api, you must be able to use jwt and CICD workflows',
     )
     .setVersion('1.0')
     .addBearerAuth({
