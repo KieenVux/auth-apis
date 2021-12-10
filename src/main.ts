@@ -8,7 +8,7 @@ async function bootstrap() {
 
   app.setGlobalPrefix('api/v1');
   const config = new DocumentBuilder()
-    .setTitle('Auth apis')
+    .setTitle('Auth apis with authorization')
     .setDescription('In order to call api, you must be able to use jwt')
     .setVersion('1.0')
     .addBearerAuth({
