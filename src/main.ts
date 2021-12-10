@@ -23,6 +23,6 @@ async function bootstrap() {
   SwaggerModule.setup('api', app, document);
   app.useGlobalPipes(new ValidationPipe());
   app.use(cookieParser());
-  await app.listen(80);
+  await app.listen(8080);
 }
 bootstrap();
